@@ -28,7 +28,7 @@ export const jokes: Joke[] = [
   },
   {
     id: 3,
-    content: 'What did the ocean say to the beach?" "Nothing, it just waved.',
+    content: "What did the ocean say to the beach? Nothing, it just waved.",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ export const jokes: Joke[] = [
   },
   {
     id: 7,
-    content: 'Where do fruits go on vacation?" "Pear-is!',
+    content: "Where do fruits go on vacation? Pear-is!",
   },
   {
     id: 8,
