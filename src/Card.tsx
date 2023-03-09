@@ -14,7 +14,9 @@ export default function Card() {
         <p data-testid="joke">{joke.content}</p>
       </div>
       <div className="footer">
-        <button onClick={() => skip()}>🤣🤣🤣</button>
+        <button data-testid="next" onClick={() => skip()}>
+          🤣🤣🤣
+        </button>
       </div>
     </div>
   );

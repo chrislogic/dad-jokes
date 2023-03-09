@@ -5,16 +5,32 @@ const baseUrl = "http://localhost:5173/";
 test("has title", async ({ page }) => {
   await page.goto(baseUrl);
 
-  // Expect a title "to contain" a substring.
   await expect(page).toHaveTitle(/Dad Jokes/);
 });
 
-// test("get started link", async ({ page }) => {
-//   await page.goto("https://playwright.dev/");
+test("has a joke", async ({ page }) => {
+  await page.goto(baseUrl);
 
-//   // Click the get started link.
-//   await page.getByRole("link", { name: "Get started" }).click();
+  const joke = page.getByTestId("joke");
 
-//   // Expects the URL to contain intro.
-//   await expect(page).toHaveURL(/.*intro/);
-// });
+  await expect(joke).not.toBeEmpty();
+});
+
+test("has a new joke button", async ({ page }) => {
+  await page.goto(baseUrl);
+
+  const button = page.getByTestId("next");
+
+  await expect(button).toHaveText("🤣🤣🤣");
+});
+
+test("next jokes", async ({ page }) => {
+  await page.goto(baseUrl);
+
+  const currentJoke = await page.getByTestId("joke").textContent();
+  await page.getByTestId("next").click();
+
+  const newJoke = await page.getByTestId("joke").textContent();
+
+  expect(currentJoke).not.toEqual(newJoke);
+});

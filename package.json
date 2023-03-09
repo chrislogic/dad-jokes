@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "e2e": "npx playwright test",
+    "e2e": "npx playwright test --trace on",
     "report": "npx playwright show-report"
   },
   "dependencies": {
